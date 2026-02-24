@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternizze História | Preservação de Memórias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Parisienne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oliva: #999B84;
+            --rose: #D7BBBA;
+            --nude-claro: #EFD9D1;
+            --fundo: #F4EEED;
+            --texto: #4A4A4A;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            background-color: var(--fundo);
+            color: var(--texto);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .logo-tipo {
+            font-family: 'Parisienne', cursive;
+            font-size: 3rem;
+            color: var(--oliva);
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 20px;
+            border-top: 1px solid var(--nude-claro);
+            padding-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--oliva);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 400px;
+            background: linear-gradient(rgba(239, 217, 209, 0.5), rgba(239, 217, 209, 0.5)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1350&q=80'); /* Imagem provisória */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            background: rgba(255,255,255,0.8);
+            padding: 20px 40px;
+            border-radius: 5px;
+        }
+
+        /* Galeria de Buquês */
+        .galeria {
+            padding: 50px 10% ;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-info h3 { color: var(--oliva); margin-bottom: 5px; }
+        
+        .card-info p { 
+            font-family: 'Parisienne', cursive; 
+            font-size: 1.4rem; 
+            color: var(--rose);
+        }
+
+        /* Botão Flutuante WhatsApp */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--oliva);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="logo-tipo">Eternizze</h1>
+    <p style="letter-spacing: 5px; color: var(--oliva);">HISTÓRIA</p>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#galeria">MODELOS</a>
+        <a href="#sobre">SOBRE</a>
+        <a href="#contato">CONTATO</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Eternize o seu momento especial</h2>
+</section>
+
+<section class="galeria" id="galeria">
+    <div class="card">
+        <img src="https://via.placeholder.com/400x500" alt="Buquê 1">
+        <div class="card-info">
+            <h3>Preservação Clássica</h3>
+            <p>Elegância em cada detalhe</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/400x500" alt="Buquê 2">
+        <div class="card-info">
+            <h3>Quadro Botânico</h3>
+            <p>Sua história na parede</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/400x500" alt="Buquê 3">
+        <div class="card-info">
+            <h3>Cúpula de Vidro</h3>
+            <p>Beleza eterna sob medida</p>
+        </div>
+    </div>
+</section>
+
+<div style="text-align: center; padding: 50px; background-color: var(--nude-claro);">
+    <h2 style="font-family: 'Parisienne'; font-size: 3rem;">Sua história merece ser guardada.</h2>
+    <p>Criado por Juci para transformar sentimentos em arte duradoura.</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Eternizze História - Todos os direitos reservados.</p>
+    <p>Siga-nos no Instagram @eternizzehistoria</p>
+</footer>
+
+<a href="https://wa.me/SEUNUMERO" class="btn-whatsapp" target="_blank">Falar com Juci</a>
+
+</body>
+</html>
