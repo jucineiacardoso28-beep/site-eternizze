@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Eternizze Histórias — transforme as flores do seu grande dia em uma lembrança para toda a vida.">
-<title>Eternizze Histórias | Buquês Eternizados</title>
+<meta name="description" content="Eternizze História — transforme as flores do seu grande dia em uma lembrança para toda a vida.">
+<title>Eternizze História | Buquês Eternizados</title>
+
 <!-- Fontes Oficiais da Identidade Visual -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,82 +24,182 @@
   --line: #E5DDD9;
 }
 
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg-cream);color:var(--text-dark);font-family:'Montserrat', sans-serif;line-height:1.6}
+body{background:var(--bg-cream);color:var(--text-dark);font-family:'Montserrat', sans-serif;line-height:1.6}
 a{text-decoration:none;color:inherit}
 .container{width:min(1120px,92%);margin:auto}
 
-/* Navegação */
-nav{position:sticky;top:0;z-index:20;background:rgba(244,238,237,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{height:80px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Cinzel', serif;font-size:24px;letter-spacing:.06em;color:var(--olive);font-weight:700}
-.logo span{display:block;font-family:'Parisienne', cursive;font-size:20px;text-transform:lowercase;color:var(--rose-dust);margin-top:-8px;font-weight:normal}
-.nav-links{display:flex;gap:28px;font-size:14px;color:var(--text-muted);font-weight:500}
+/* Navegação Flutuante */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(244,238,237,.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{height:75px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cinzel', serif;font-size:22px;letter-spacing:.06em;color:var(--olive);font-weight:700}
+.logo span{display:block;font-family:'Parisienne', cursive;font-size:18px;text-transform:lowercase;color:var(--rose-dust);margin-top:-8px;font-weight:normal}
+.nav-links{display:flex;gap:28px;font-size:13px;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:1px}
 .nav-links a:hover{color:var(--olive)}
 
-/* Hero Section */
-.hero{padding:72px 0 90px}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
-.eyebrow{font-family:'Cinzel', serif;font-size:13px;text-transform:uppercase;letter-spacing:.2em;color:var(--olive);font-weight:600}
-h1{font-family:'Cinzel', serif;font-weight:400;font-size:clamp(38px,5vw,62px);line-height:1.15;margin:18px 0 22px;color:var(--text-dark)}
-h1 em{font-family:'Parisienne', cursive;color:var(--olive);font-style:normal;font-weight:normal;display:inline-block;padding-left:5px}
-.lead{font-size:16px;color:var(--text-muted);max-width:540px;font-weight:300}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:50px;font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;margin:10px 8px 0 0;transition:all .3s ease}
-.btn-primary{background:var(--olive);color:white;border:1px solid var(--olive)}
-.btn-primary:hover{background:#888A75;border-color:#888A75}
-.btn-outline{background:transparent;border:1px solid var(--olive);color:var(--olive)}
-.btn-outline:hover{background:var(--rose-light)}
+/* ÁREA DO EFEITO DE SCROLL (HERO) */
+.hero-scroll {
+    height: 400vh;
+    position: relative;
+}
+.hero-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: var(--bg-cream);
+}
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(244,238,237,0.96) 0%,
+        rgba(244,238,237,0.75) 35%,
+        rgba(244,238,237,0.15) 60%,
+        rgba(244,238,237,0) 100%
+    );
+}
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 42%;
+    margin-left: 8%;
+    margin-top: 40px;
+}
+.hero-small {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: var(--olive);
+    font-weight: 600;
+}
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(38px, 4.5vw, 68px);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+.hero-title span {
+    font-family: 'Parisienne', cursive;
+    color: var(--olive);
+    display: block;
+    margin-top: 5px;
+}
+.hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 420px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+.hero-button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: var(--olive);
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.hero-button:hover {
+    background: #888A75;
+}
 
-.hero-photo{position:relative}
-.hero-photo img{width:100%;height:580px;object-fit:cover;border-radius:12px;box-shadow:0 20px 40px rgba(153,155,132,.18)}
-.hero-photo:after{content:"";position:absolute;right:-15px;bottom:-15px;width:120px;height:120px;border:2px solid var(--rose-dust);border-radius:12px;z-index:-1}
+/* INDICADOR DE SCROLL */
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--olive);
+    text-align: center;
+}
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--olive);
+    margin: 8px auto 0;
+}
 
-/* Seções */
+/* SEÇÕES RESTANTES DO SITE */
 .section{padding:90px 0}
 .section.alt{background:var(--paper)}
 .section-head{text-align:center;max-width:680px;margin:0 auto 48px}
 .section-head h2{font-family:'Cinzel', serif;font-weight:400;font-size:38px;margin:12px 0;color:var(--text-dark)}
 .section-head p{color:var(--text-muted);font-weight:300}
 
-/* Cards */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:var(--bg-cream);border:1px solid var(--line);padding:36px 28px;border-radius:12px;transition:transform .3s ease}
-.card:hover{transform:translateY(-5px)}
+.card{background:var(--bg-cream);border:1px solid var(--line);padding:36px 28px;border-radius:12px}
 .num{font-family:'Cinzel', serif;font-size:32px;color:var(--rose-dust);font-weight:700}
 .card h3{font-family:'Cinzel', serif;font-weight:600;font-size:20px;margin:14px 0 10px;color:var(--olive)}
 .card p{color:var(--text-muted);font-size:14px;font-weight:300}
 
-/* Galeria */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.gallery figure{margin:0;background:white;border:1px solid var(--line);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.03)}
+.gallery figure{margin:0;background:white;border:1px solid var(--line);padding:12px;border-radius:12px}
 .gallery img{width:100%;height:520px;object-fit:cover;display:block;border-radius:8px}
 .gallery figcaption{padding:16px 8px 6px;font-family:'Parisienne', cursive;font-size:24px;color:var(--olive);text-align:center}
 
-/* Depoimento / Citação */
 .quote{max-width:820px;margin:auto;text-align:center}
 .quote blockquote{font-family:'Cinzel', serif;font-size:28px;line-height:1.4;margin:0;color:var(--text-dark);font-weight:400}
 .quote p{font-family:'Parisienne', cursive;font-size:30px;color:var(--rose-dust);margin-top:18px}
 
-/* CTA */
 .cta{background:var(--olive);color:white;padding:85px 0;text-align:center}
 .cta h2{font-family:'Cinzel', serif;font-weight:400;font-size:40px;margin:0 0 16px}
 .cta p{color:var(--bg-cream);max-width:620px;margin:0 auto 28px;font-weight:300}
-.cta .btn-primary{background:var(--rose-dust);border-color:var(--rose-dust);color:white}
-.cta .btn-primary:hover{background:#c8abaa;border-color:#c8abaa}
+.cta .btn-primary{background:var(--rose-dust);border-color:var(--rose-dust);color:white;padding:14px 28px;border-radius:50px;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;display:inline-block;margin:5px}
 
-/* Rodapé */
 footer{padding:32px 0;color:var(--text-muted);font-size:13px;background:var(--bg-cream);border-top:1px solid var(--line)}
 .footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-weight:300}
 
-@media(max-width:800px){
- .nav-links{display:none}.hero{padding:48px 0 65px}.hero-grid{grid-template-columns:1fr;gap:35px}
- .hero-photo img{height:420px}.cards,.gallery{grid-template-columns:1fr}.gallery img{height:420px}
- .section{padding:68px 0}.section-head h2{font-size:30px}.quote blockquote{font-size:22px}
+/* MOBILE RESPONSIVO */
+@media (max-width: 768px) {
+    .nav-links{display:none}
+    .hero-scroll { height: 300vh; }
+    .hero-content {
+        width: 88%;
+        margin: 0 auto;
+        margin-top: 80px;
+    }
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(244,238,237,0.95) 0%,
+            rgba(244,238,237,0.70) 45%,
+            rgba(244,238,237,0.10) 80%
+        );
+    }
+    .cards, .gallery { grid-template-columns: 1fr; }
+    .gallery img { height: 400px; }
+    .section { padding: 60px 0; }
 }
 </style>
 </head>
 <body>
+
 <nav>
   <div class="container nav-in">
     <a class="logo" href="#">ETERNIZZE<span>história</span></a>
@@ -111,27 +212,40 @@ footer{padding:32px 0;color:var(--text-muted);font-size:13px;background:var(--bg
   </div>
 </nav>
 
-<header class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Flores que viram memória</div>
-      <h1>Seu amor merece ser guardado <em>para sempre.</em></h1>
-      <p class="lead">Transformamos o seu buquê em uma peça única, delicada e cheia de significado — para você reviver a emoção do grande dia sempre que olhar para ela.</p>
-      <div>
-        <a class="btn btn-primary" href="#contato">Quero eternizar meu buquê</a>
-        <a class="btn btn-outline" href="#galeria">Ver trabalhos</a>
-      </div>
+<!-- SEÇÃO HERO COM ANIMAÇÃO POR SCROLL -->
+<section class="hero-scroll">
+    <div class="hero-sticky">
+        <img
+            id="heroImage"
+            class="hero-image"
+            src="images/buque-01.jpeg"
+            alt="Noiva soltando seu buquê e se transformando em moldura eternizada"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-small">Eternizze História</div>
+            <h1 class="hero-title">
+                Algumas histórias
+                <span>merecem durar para sempre.</span>
+            </h1>
+            <p class="hero-description">
+                Transformamos o seu buquê em uma lembrança que atravessa o tempo e preserva a emoção do seu grande dia.
+            </p>
+            <a href="#contato" class="hero-button">
+                Eternize sua história
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            Role para descobrir
+            <div class="scroll-line"></div>
+        </div>
     </div>
-    <div class="hero-photo">
-      <img src="images/buque-01.jpeg" alt="Buquê de flores eternizado em moldura">
-    </div>
-  </div>
-</header>
+</section>
 
 <section class="section alt" id="como-funciona">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Do buquê à lembrança</div>
+      <div class="hero-small">Do buquê à lembrança</div>
       <h2>Como funciona</h2>
       <p>Cada peça é preparada com cuidado para preservar a beleza e a história das suas flores.</p>
     </div>
@@ -146,17 +260,17 @@ footer{padding:32px 0;color:var(--text-muted);font-size:13px;background:var(--bg
 <section class="section" id="galeria">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Algumas histórias</div>
+      <div class="hero-small">Algumas histórias</div>
       <h2>Trabalhos que falam por si</h2>
       <p>Detalhes, flores, nomes e datas que transformam uma lembrança em algo que pode ser admirado por muitos anos.</p>
     </div>
     <div class="gallery">
       <figure>
-        <img src="images/buque-01.jpeg" alt="Moldura Eternizze Histórias com rosas amarelas e flores delicadas">
+        <img src="images/buque-01.jpeg" alt="Moldura Eternizze História">
         <figcaption>Uma composição delicada para guardar uma história especial.</figcaption>
       </figure>
       <figure>
-        <img src="images/buque-02.jpeg" alt="Moldura com buquê branco preservado, nomes e data do casamento">
+        <img src="images/buque-02.jpeg" alt="Moldura com buquê branco preservado">
         <figcaption>Buquê, nomes e a data do grande dia reunidos em uma única peça.</figcaption>
       </figure>
     </div>
@@ -165,7 +279,7 @@ footer{padding:32px 0;color:var(--text-muted);font-size:13px;background:var(--bg
 
 <section class="section alt" id="sobre">
   <div class="container quote">
-    <div class="eyebrow">Eternizze História</div>
+    <div class="hero-small">Eternizze História</div>
     <blockquote>“Algumas flores duram dias. A história que elas representam pode durar para sempre.”</blockquote>
     <p>Uma lembrança feita para voltar no tempo sem precisar dizer uma palavra.</p>
   </div>
@@ -173,11 +287,10 @@ footer{padding:32px 0;color:var(--text-muted);font-size:13px;background:var(--bg
 
 <section class="cta" id="contato">
   <div class="container">
-    <div class="eyebrow" style="color:var(--rose-light)">Vamos criar a sua?</div>
+    <div class="hero-small" style="color:var(--rose-light)">Vamos criar a sua?</div>
     <h2>Seu buquê pode virar uma história para toda a vida.</h2>
     <p>Fale conosco para consultar disponibilidade, valores e as opções de personalização da sua eternização.</p>
-    <a class="btn btn-primary" href="https://wa.me/?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20eternização%20do%20meu%20buquê." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
-    <a class="btn" style="color:white; border: 1px solid white;" href="https://www.instagram.com/eternizze_historia/" target="_blank" rel="noopener">Instagram @eternizze_historia</a>
+    <a class="btn-primary" href="https://wa.me/?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20eternização%20do%20meu%20buquê." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
   </div>
 </section>
 
@@ -187,5 +300,37 @@ footer{padding:32px 0;color:var(--text-muted);font-size:13px;background:var(--bg
     <div>Buquês eternizados • Memórias que permanecem</div>
   </div>
 </footer>
+
+<script>
+const image = document.getElementById("heroImage");
+const totalFrames = 80;
+const frames = [];
+
+/* PRÉ-CARREGAMENTO DAS IMAGENS */
+for (let i = 1; i <= totalFrames; i++) {
+    const frame = new Image();
+    const number = String(i).padStart(3, "0");
+    frame.src = `frames/frame-${number}.jpg`;
+    frames.push(frame);
+}
+
+/* CONTROLE PELO SCROLL */
+window.addEventListener("scroll", () => {
+    const section = document.querySelector(".hero-scroll");
+    const rect = section.getBoundingClientRect();
+    const scrollDistance = section.offsetHeight - window.innerHeight;
+    const progress = Math.min(
+        Math.max(-rect.top / scrollDistance, 0),
+        1
+    );
+    const frameIndex = Math.floor(
+        progress * (totalFrames - 1)
+    );
+    if (frames[frameIndex] && frames[frameIndex].complete) {
+        image.src = frames[frameIndex].src;
+    }
+});
+</script>
+
 </body>
 </html>
